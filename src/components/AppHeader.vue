@@ -1,6 +1,8 @@
 <script>
+import Jumbo from './Jumbo.vue'
 export default {
     nome: 'Appheader',
+    components: { Jumbo },
     data() {
         return {
             links: [
@@ -73,6 +75,7 @@ export default {
             </ul>
         </nav>
     </header>
+    <jumbo></jumbo>
 </template>
 
 <style lang="scss" scoped>

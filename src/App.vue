@@ -2,15 +2,21 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import series from './data/series.js'
 export default {
   nome: 'vite-comics',
-  components: { AppHeader, AppMain, AppFooter }
+  components: { AppHeader, AppMain, AppFooter },
+  data() {
+    return {
+      series
+    }
+  }
 }
 </script>
 
 <template>
   <app-header></app-header>
-  <app-main></app-main>
+  <app-main :series="series"></app-main>
   <app-footer></app-footer>
 </template>
 

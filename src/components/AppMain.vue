@@ -1,6 +1,11 @@
 <script>
+import SeriesCard from './series/SeriesCard.vue';
 export default {
     nome: 'AppMain',
+    components: { SeriesCard },
+    props: {
+        series: Array
+    },
     data() {
         return {
             elements: [
@@ -46,7 +51,10 @@ export default {
     <main>
         <section id="comics">
             <div class="container">
-                <h2>Content goes here</h2>
+                <h2>CURRENT SERIES</h2>
+                <div class="container card-container">
+                    <series-card v-for="serie in series" :key="serie.thumb" :serie="serie"></series-card>
+                </div>
             </div>
         </section>
         <section id="dc">
@@ -71,6 +79,16 @@ export default {
     color: white;
     padding: 4rem 1rem;
     min-height: 150px;
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+
+        .card {
+            flex-basis: calc(100%/6);
+        }
+    }
 }
 
 #dc {
